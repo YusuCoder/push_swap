@@ -6,7 +6,7 @@
 #    By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/12 20:08:19 by ryusupov          #+#    #+#              #
-#    Updated: 2024/04/23 17:30:45 by ryusupov         ###   ########.fr        #
+#    Updated: 2024/04/26 14:36:10 by ryusupov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ OBJ = $(SRC:.c=.o)
 BONUS_SRC = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
-INCS = libft.h
+INCS = ../ryusupov.h
 RM = rm -f
 
 all: $(NAME)

@@ -6,7 +6,7 @@
 #    By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/18 14:16:36 by ryusupov          #+#    #+#              #
-#    Updated: 2024/03/21 15:19:06 by ryusupov         ###   ########.fr        #
+#    Updated: 2024/04/26 14:38:42 by ryusupov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRC = ft_printf.c ft_putnbr.c ft_ishex.c ft_decimal.c ft_print_adress.c ft_putch
 OBJ = $(SRC:.c=.o)
 
 AR = ar rcs
-INCS = ft_printf.h
+INCS = ../ryusupov.h
 RM = rm -f
 
 all: $(NAME)

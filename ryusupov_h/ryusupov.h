@@ -6,27 +6,55 @@
 /*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:21:53 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/04/25 19:25:43 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/04/26 14:13:51 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef RYUSUPOV_H
 # define RYUSUPOV_H
-
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 15
+# endif
+/*-----Text Style------*/
+# define BOLD "\x1b[1m"
+# define UNDERLINE "\x1b[4m"
+# define ITALIC "\x1b[3m"
+# define RESET "\x1b[0m"
+/*-----Text Color-----*/
+# define COLOR_RED "\x1b[31m"
+# define COLOR_GREEN "\x1b[32m"
+# define COLOR_YELLOW "\x1b[33m"
+# define COLOR_BLUE "\x1b[24m"
+# define COLOR_MAGENTA "\x1b[35m"
+# define COLOR_CYAN "\x1b[36m"
+# define COLOR_WHITE "\x1b[97m"
+# define RESET "\x1b[0m"
+/*-----Helper libs------*/
 # include <limits.h>
 # include <stdarg.h>
 # include <stddef.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <fcntl.h>
 
 /*-----------------lIST STRUCTS------------------*/
+
+			/*------libft_struct--------*/
 
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
+		/*-----get_next_line_struct------*/
+
+typedef struct t_struct
+{
+	int				new_l_buffer;
+	int				fd;
+}					t_struct;
 
 /*-----------------FT_PRINTF---------------------*/
 
@@ -37,6 +65,15 @@ int					ft_putchar(char s);
 int					ft_print_adress(long *p);
 int					ft_decimal(size_t i, int res);
 int					ft_ishex(unsigned long long hex, int num, char uc);
+// size_t				ft_strlen_printf(const char *str);
+
+/*-----------------GET_NEXT_LINE------------------*/
+
+t_struct			*get_t_struct(int new_fd);
+char				*ft_strjoin_gnl(char *s1, char *s2);
+char				*ft_strndup(char *str, int start, int end);
+char				*get_next_line(int fd);
+int					new_line(char *str);
 size_t				ft_strlen(const char *str);
 
 /*---------------LBFT FUNCTIONS------------------*/
