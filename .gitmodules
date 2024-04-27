@@ -1,0 +1,3 @@
+[submodule "ryusupov_h/libftt"]
+	path = ryusupov_h/libftt
+	url = https://github.com/YusuCoder/libft.git
