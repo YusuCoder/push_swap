@@ -6,7 +6,7 @@
 /*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 17:43:39 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/04/27 18:11:44 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/04/27 18:41:46 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ static void	push_swap(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b,
 	else if (stack_size > 3)
 		huge_sorting(r_stack_a);
 }
+
+
 
 int	main(int argc, char **argv)
 {
