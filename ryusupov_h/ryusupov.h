@@ -6,7 +6,7 @@
 /*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:21:53 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/04/27 17:57:58 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/04/28 14:46:31 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@
 # define COLOR_WHITE "\x1b[97m"
 # define RESET "\x1b[0m"
 /*-----Helper libs------*/
+# include <fcntl.h>
 # include <limits.h>
 # include <stdarg.h>
 # include <stddef.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <fcntl.h>
 /*-----------------FT_PRINTF---------------------*/
 # include "./printf/ft_printf.h"
 /*-----------------GET_NEXT_LINE------------------*/
@@ -51,7 +51,7 @@ typedef struct s_ryusupov
 	int				r_target_pos;
 	int				r_cost_a;
 	int				r_cost_b;
-	struct	s_stack	*next;
-}				t_ryusupov;
+	struct s_stack	*next;
+}					t_ryusupov;
 
 #endif
