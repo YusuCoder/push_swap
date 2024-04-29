@@ -14,7 +14,7 @@ SRC =
 OBJ =
 
 PRINTF = ./ryusupov_h/printf/libftprintf.a
-LIBFT = ./ryusupov_h/libft/libft.h
+LIBFT = ./ryusupov_h/libftt/libft.h
 
 
 all: $(NAME)
@@ -29,7 +29,7 @@ $(PRINTF):
 $(LIBFT):
 	@make -C ./ryusupov_h/libftt
 
-$(NAME): $(OBJ) $(PRINTF)
+$(NAME): $(OBJ) $(PRINTF) $(LIBFT)
 	@echo "$(GREEN) $(NAME)\n\n<---------------BUILDING MANDATORY OBJECTS--------------->\n"
 	$(CC) $(CFLAGS) $(OBJ) $(PRINTF) $(LIBFT)
 
