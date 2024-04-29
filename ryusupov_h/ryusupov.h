@@ -6,7 +6,7 @@
 /*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:21:53 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/04/28 14:46:31 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/04/29 16:30:26 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,7 @@ typedef struct s_ryusupov
 	int				r_cost_b;
 	struct s_stack	*next;
 }					t_ryusupov;
+
+int					correct_input(char **str);
 
 #endif

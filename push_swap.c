@@ -6,11 +6,37 @@
 /*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 17:43:39 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/04/28 17:12:35 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/04/29 17:27:20 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ryusupov_h/ryusupov.h"
+#include "ryusupov_h/ryusupov.h".
+
+static void	*stack_contents(int argc, char **argv)
+{
+	t_ryusupov	*r_stack_a;
+	long int	num;
+	int			i;
+
+	r_stack_a = NULL;
+	num = 0;
+	i = 1;
+	while (argc > i)
+	{
+		num = ft_atoi(argv[i]);
+		if (num > INT_MAX || num < INT_MIN)
+		{
+			free(r_stack_a);
+			return (NULL);
+		}
+		if (i == 1)
+			r_stack_a = stack_new((int)num);
+		else
+			buttom_stack(&r_stack_a, stack_new((int)num));
+		i++;
+	}
+	return (r_stack_a);
+}
 
 static void	push_swap(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b,
 		int stack_size)
@@ -31,11 +57,18 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 	{
-		ft_printf("Nothing to sort!");
+		ft_printf("Nothing to sort!\n");
 		return (0);
 	}
+	else if (argc == 2)
+		argv = ft_split(argv[1], ' ');
 	if (!correct_input(argv))
-		exit_program(NULL, NULL);
+	{
+		free(r_stack_a);
+		free(r_stack_b);
+		ft_printf("\nError");
+		return (0);
+	}
 	r_stack_b = NULL;
 	r_stack_a = stack_contents(argc, argv);
 	r_size = stack_size(r_stack_a);
