@@ -6,7 +6,7 @@
 /*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:21:53 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/04/29 16:30:26 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/04/30 18:59:47 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@
 /*-----------------FT_PRINTF---------------------*/
 # include "./printf/ft_printf.h"
 /*-----------------GET_NEXT_LINE------------------*/
-# include "get_next_line/get_next_line.h"
+// # include "get_next_line/get_next_line.h"
 # include "get_next_line/get_next_line_bonus.h"
 /*---------------LBFT FUNCTIONS------------------*/
 # include "libftt/libft.h"
@@ -45,15 +45,16 @@
 /*--------struct for the push_swap list---------*/
 typedef struct s_ryusupov
 {
-	int				r_value;
-	int				i;
-	int				r_pos;
-	int				r_target_pos;
-	int				r_cost_a;
-	int				r_cost_b;
-	struct s_stack	*next;
-}					t_ryusupov;
+	int					r_content;
+	int					i;
+	int					r_pos;
+	int					r_target_pos;
+	int					r_cost_a;
+	int					r_cost_b;
+	struct s_ryusupov	*next;
+}						t_ryusupov;
 
-int					correct_input(char **str);
+int						correct_input(char **str);
+void					content_index(t_ryusupov *r_stack_a, int size);
 
 #endif
