@@ -3,15 +3,15 @@ GREEN=\033[0;32m
 YELLOW=\033[0;33m
 NC=\033[0m
 
-NAME =
+NAME = push_swap
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
-INCS =
+INCS = ./ryusupov_h/ryusupov.h
 
-SRC =
-OBJ =
+SRC = push_swap.c cheching_inputs.c indexing.c
+OBJ = $(SRC:.c=.o)
 
 PRINTF = ./ryusupov_h/printf/libftprintf.a
 LIBFT = ./ryusupov_h/libftt/libft.h
@@ -20,7 +20,7 @@ LIBFT = ./ryusupov_h/libftt/libft.h
 all: $(NAME)
 	@echo "$(GREEN) $(NAME)\n\n<---------------BUILT SUCCESSFULLY!--------------->\n"
 
-bonus: $()
+bonus: all
 	@echo "$(GREEN) $(NAME)\n\n<---------------BONUS BUILT SUCCESSFULLY!--------------->\n"
 
 $(PRINTF):
@@ -34,21 +34,20 @@ $(NAME): $(OBJ) $(PRINTF) $(LIBFT)
 	$(CC) $(CFLAGS) $(OBJ) $(PRINTF) $(LIBFT)
 
 %.o: %.c $(INCS)
-	@echo "$(GREEN) $(NAME)\n\n<---------------Compiling--------------->\n"
-$(CC) $(CFLAGS) -c $< -o $@
+	@echo "$(YELLOW)\n<---------------Compiling--------------->"
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-@echo "$(RED) \nCleaning ...............................................................\n"
-$(MAKE) clean -C ./ryusupov_h/printf
-$(MAKE) clean -C ./ryusupov_h/libftt
-$(RM) $(SRC) $(OBJ) $(PRINTF) $(LIBFT)
+	@echo "$(RED) \nCleaning ...............................................................\n"
+	$(MAKE) clean -C ./ryusupov_h/printf
+	$(MAKE) clean -C ./ryusupov_h/libftt
+	$(RM) $(SRC) $(OBJ) $(PRINTF) $(LIBFT)
 
 fclean: clean
-@echo "$(GREEN)\n<---------------All the object files and executables were successfully deleted!--------------->\n"
-$(RM) $(NAME) $(OBJ)
-
+	@echo "$(GREEN)\n<---------------All the object files and executables were successfully deleted!--------------->\n"
+	$(RM) $(NAME) $(OBJ)
 
 re: fclean all
-@echo "$(GREEN)<---------------All the object files were deleted and recompiled successfully!--------------->\n"
+	@echo "$(GREEN)<---------------All the object files were deleted and recompiled successfully!--------------->\n"
 
 .PHONY: all re clean fclean bonus

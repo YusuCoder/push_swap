@@ -6,11 +6,11 @@
 /*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 17:43:39 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/04/30 17:05:07 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/04/30 20:52:57 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ryusupov_h/ryusupov.h".
+#include "ryusupov_h/ryusupov.h"
 
 static void	*stack_contents(int argc, char **argv)
 {
@@ -42,11 +42,11 @@ static void	push_swap(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b,
 		int stack_size)
 {
 	if (stack_size == 2 && !list_sorted(*r_stack_a))
-		option_sa(r_stack_a);
+		option_sa(*r_stack_a);
 	else if (stack_size == 3)
-		small_sorting(r_stack_a);
+		small_sorting(*r_stack_a);
 	else if (stack_size > 3)
-		huge_sorting(r_stack_a);
+		huge_sorting(*r_stack_a);
 }
 
 int	main(int argc, char **argv)
