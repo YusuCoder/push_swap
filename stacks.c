@@ -6,7 +6,7 @@
 /*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 11:44:33 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/03 11:46:36 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:17:34 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 /*Function buttom_stack adds new node to the buttom of the list*/
 
+/*Function stack_new creates a stack elements with the provided value,
+	and returns the newly created stack element*/
 void	buttom_stack(t_ryusupov **r_stack_a, t_ryusupov *new)
 {
 	t_ryusupov	*current;
@@ -32,6 +34,41 @@ void	buttom_stack(t_ryusupov **r_stack_a, t_ryusupov *new)
 	}
 	current->next = new;
 }
+
+t_ryusupov	*stack_new(int str)
+{
+	t_ryusupov	*new;
+
+	new = malloc(sizeof(t_ryusupov));
+	if (!new)
+		return (NULL);
+	new->r_content;
+	new->i = 0;
+	new->r_pos = 0;
+	new->r_target_pos = 0;
+	new->r_cost_a = 0;
+	new->r_cost_b = 0;
+	new->next = NULL;
+	return (new);
+}
+
+// // int main() {
+// // 	int str = 10;
+// // 	t_ryusupov *new_node = stack_new(str);
+// // 	if (!new_node) {
+// // 		printf("Error: Memory allocation failed!\n");
+// // 		return (1);
+// // 	}
+// // 	printf("New Node Values:\n");
+// // 	printf("r_content: %d\n", new_node->r_content);
+// // 	printf("i: %d\n", new_node->i);
+// // 	printf("r_pos: %d\n", new_node->r_pos);
+// // 	printf("r_target_pos: %d\n", new_node->r_target_pos);
+// // 	printf("r_cost_a: %d\n", new_node->r_cost_a);
+// // 	printf("next: %p\n", (void *)new_node->next);
+// // 	free(new_node);
+// // 	return (0);
+// // }
 
 // int	main(void)
 // {

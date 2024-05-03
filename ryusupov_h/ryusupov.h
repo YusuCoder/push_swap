@@ -6,7 +6,7 @@
 /*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:21:53 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/01 14:46:36 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/05/03 18:36:42 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,15 @@ typedef struct s_ryusupov
 	int					r_target_pos;
 	int					r_cost_a;
 	int					r_cost_b;
-	// void				*content;
 	struct s_ryusupov	*next;
 }						t_ryusupov;
 /*-----------Function declarations-------------*/
 t_ryusupov				*stack_new(int str);
-void					buttom_stack(t_ryusupov **r_stach_a, t_ryusupov *new);
 int						list_sorted_adapter(t_ryusupov *stack);
 int						correct_input(char **str);
+void					buttom_stack(t_ryusupov **r_stach_a, t_ryusupov *new);
 void					content_index(t_ryusupov *r_stack_a, int size);
+void					rule_sa_sb(t_ryusupov **r_stack, char option);
+void					rule_ss(t_ryusupov **r_stack, t_ryusupov **r_stack_b);
 
 #endif
