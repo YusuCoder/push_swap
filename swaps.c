@@ -6,7 +6,7 @@
 /*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 12:01:11 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/03 18:38:23 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/05/03 18:48:21 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,15 @@ void	rule_sa_sb(t_ryusupov **r_stack, char rule)
 	if (rule == 'a' || rule == 'b')
 	{
 		swap_list(*r_stack);
-		printf("s%c\n", rule);
+		ft_printf("s%c\n", rule);
 	}
 }
 
-void	rule_ss(t_ryusupov **r_stack, t_ryusupov **r_stack_b)
+void	rule_ss(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b)
 {
-	swap_list(*r_stack);
+	swap_list(*r_stack_a);
 	swap_list(*r_stack_b);
-	printf("ss\n");
+	ft_printf("ss\n");
 }
 
 // int	main(void)
