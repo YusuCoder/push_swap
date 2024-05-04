@@ -6,7 +6,7 @@
 /*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 13:18:07 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/04 15:03:52 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/05/04 21:22:24 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ void	small_sorting(t_ryusupov **r_stack)
 		return ;
 	max = max_index(*r_stack);
 	if ((*r_stack)->i == max)
-		rule_ra(r_stack);
+		rule_ra_rb(r_stack, 'a');
 	else if ((*r_stack)->next->i == max)
-		rule_rra(r_stack);
+		rule_rra_rrb(r_stack, 'a');
 	if ((*r_stack)->i > (*r_stack)->next->i)
 		rule_sa_sb(r_stack, 'a');
 }

@@ -6,7 +6,7 @@
 /*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 17:43:39 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/04 13:18:54 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/05/04 21:21:38 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,16 +44,16 @@ static void	push_swap(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b,
 		int stack_size)
 {
 	if (stack_size == 2 && !list_sorted_adapter(*r_stack_a))
-		rule_sa_sb(*r_stack_a, 'a');
+		rule_sa_sb(r_stack_a, 'a');
 	else if (stack_size == 3)
-		small_sorting(*r_stack_a);
+		small_sorting(r_stack_a);
 	else if (stack_size > 3)
-		huge_sorting(*r_stack_a);
+		huge_sorting(r_stack_a, r_stack_b);
 }
 
 int	main(int argc, char **argv)
 {
-	t_ryusupov	*r_stack_a;
+	t_ryusupov	*r_stack_a = NULL;
 	t_ryusupov	*r_stack_b;
 	int			r_size;
 
@@ -66,7 +66,6 @@ int	main(int argc, char **argv)
 		argv = ft_split(argv[1], ' ');
 	if (!correct_input(argv))
 	{
-		free(r_stack_a);
 		ft_printf("\nError");
 		exit(EXIT_FAILURE);
 	}
