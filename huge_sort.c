@@ -6,7 +6,7 @@
 /*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 21:12:32 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/05 20:57:29 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/05/05 21:06:35 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,11 +74,11 @@ void	huge_sorting(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b)
 	small_sorting(r_stack_a);
 	while (*r_stack_b)
 	{
-		get_positions(r_stack_a, r_stack_b);
-		get_costs(r_stack_a, r_stack_b);
+		positions(r_stack_a, r_stack_b);
+		costs(r_stack_a, r_stack_b);
 		smallest_move(r_stack_a, r_stack_b);
 	}
 	if (!list_sorted(*r_stack_a))
 		;
-	shift_stack(r_stack_a);
+	shifting(r_stack_a);
 }
