@@ -6,7 +6,7 @@
 /*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 13:18:07 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/04 21:22:24 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/05/05 13:37:35 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	small_sorting(t_ryusupov **r_stack)
 {
 	int	max;
 
-	if (list_sorted_adapter(*r_stack))
+	if (list_sorted(*r_stack))
 		return ;
 	max = max_index(*r_stack);
 	if ((*r_stack)->i == max)

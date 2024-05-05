@@ -6,11 +6,11 @@
 /*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 13:13:28 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/04 21:21:15 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/05/05 13:34:36 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./ryusupov_h/ryusupov.h"
+// #include "./ryusupov_h/ryusupov.h"
 
 // t_list	*convert_to_list(t_ryusupov *r_stack)
 // {

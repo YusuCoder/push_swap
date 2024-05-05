@@ -6,7 +6,7 @@
 /*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:21:53 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/04 21:16:36 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/05/05 21:03:07 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,22 +41,8 @@
 # include "get_next_line/get_next_line_bonus.h"
 /*---------------LBFT FUNCTIONS------------------*/
 # include "libftt/libft.h"
-
-/*--------struct for the push_swap list---------*/
-// typedef struct s_ryusupov
-// {
-// 	int					r_content;
-// 	int					i;
-// 	int					r_pos;
-// 	int					r_target_pos;
-// 	int					r_cost_a;
-// 	int					r_cost_b;
-// 	struct s_ryusupov	*next;
-// }						t_ryusupov;
 /*-----------Function declarations-------------*/
 t_ryusupov	*stack_new(int str);
-int			list_sorted_adapter(t_ryusupov *stack);
-int			correct_input(char **str);
 void		small_sorting(t_ryusupov **r_stack);
 void		buttom_stack(t_ryusupov **r_stach_a, t_ryusupov *new);
 void		content_index(t_ryusupov *r_stack_a, int size);
@@ -65,8 +51,11 @@ void		rule_ss(t_ryusupov **r_stack, t_ryusupov **r_stack_b);
 void		rule_ra_rb(t_ryusupov **r_stack, char rule);
 void		rule_rr(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b);
 void		rule_rra_rrb(t_ryusupov **r_stack, char rule);
+void		rule_pb(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b);
+void		rule_pa(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b);
 void	rule_rrr(t_ryusupov **r_stack_a,
 				t_ryusupov **r_stack_b);
-void	huge_sorting(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b);
+void		huge_sorting(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b);
+int			correct_input(char **str);
 
 #endif
