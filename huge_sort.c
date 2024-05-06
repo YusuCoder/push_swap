@@ -6,7 +6,7 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 21:12:32 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/06 20:12:33 by mac              ###   ########.fr       */
+/*   Updated: 2024/05/06 21:30:12 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ int get_lowest_index(t_ryusupov **r_stack)
     while (tmp)
     {
         tmp->pos = i;
-        if (tmp->index < lowest_index)
+        if (tmp->i < lowest_index)
         {
-            lowest_index = tmp->index;
+            lowest_index = tmp->i;
             lowest_pos = i;
         }
         tmp = tmp->next;
