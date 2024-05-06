@@ -6,7 +6,7 @@
 /*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 14:55:46 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/04/29 17:21:06 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/05/05 13:31:01 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static int	str_is_num(char *str)
 		return (0);
 	if (str[i] != '\0' && !ft_isdigit(str[i]))
 		return (0);
-	if (str[i] == '+' || str[i] == '-' && str[i + 1] != '\0')
+	if (str[i] == '+' || (str[i] == '-' && str[i + 1] != '\0'))
 		i++;
 	while (str[i] != '\0')
 	{

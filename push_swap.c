@@ -6,7 +6,7 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 17:43:39 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/01 21:47:27 by mac              ###   ########.fr       */
+/*   Updated: 2024/05/06 12:31:17 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,9 @@ static void	*stack_contents(int argc, char **argv)
 		if (i == 1)
 			r_stack_a = stack_new((int)num);
 		else
+		{
 			buttom_stack(&r_stack_a, stack_new((int)num));
+		}
 		i++;
 	}
 	return (r_stack_a);
@@ -43,16 +45,16 @@ static void	push_swap(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b,
 		int stack_size)
 {
 	if (stack_size == 2 && !list_sorted(*r_stack_a))
-		option_sa(*r_stack_a);
+		rule_sa_sb(r_stack_a, 'a');
 	else if (stack_size == 3)
-		small_sorting(*r_stack_a);
+		small_sorting(r_stack_a);
 	else if (stack_size > 3)
-		huge_sorting(*r_stack_a);
+		huge_sorting(r_stack_a, r_stack_b);
 }
 
 int	main(int argc, char **argv)
 {
-	t_ryusupov	*r_stack_a;
+	t_ryusupov	*r_stack_a = NULL;
 	t_ryusupov	*r_stack_b;
 	int			r_size;
 
@@ -65,8 +67,6 @@ int	main(int argc, char **argv)
 		argv = ft_split(argv[1], ' ');
 	if (!correct_input(argv))
 	{
-		free(r_stack_a);
-		free(r_stack_b);
 		ft_printf("\nError");
 		exit(EXIT_FAILURE);
 	}
