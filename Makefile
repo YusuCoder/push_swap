@@ -22,7 +22,7 @@ INCS = -I ./ryusupov_h/
 
 define ANIMATE_WELCOME
     @printf "\n\033[1;32mProcessing"
-    @sleep 1
+    @sleep 0.1
     @for i in {1..10}; do \
         printf "."; \
         sleep 0.2; \
@@ -49,8 +49,8 @@ endef
 all: $(NAME)
 
 $(NAME): $(OBJ) $(LIBFT) $(PRINTF)
-	$(ANIMATE_WELCOME)
 	@$(CC) $(CFLAGS) $(INCS) -o $(NAME) $(OBJ) $(LIBFT) $(PRINTF)
+	$(ANIMATE_WELCOME)
 
 $(LIBFT):
 	@make -C $(LIBFT_DIR)

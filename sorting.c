@@ -6,7 +6,7 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 13:18:07 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/07 22:24:04 by mac              ###   ########.fr       */
+/*   Updated: 2024/05/08 23:44:33 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	small_sorting(t_ryusupov **r_stack)
 	else if ((*r_stack)->next->i == max)
 		rule_rra(r_stack);
 	if ((*r_stack)->i > (*r_stack)->next->i)
-		rule_sa(r_stack);
+		rule_sa_sb(r_stack, 'a');
 }
 
 // t_ryusupov *createNode(int data) {
