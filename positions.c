@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   positions.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 12:34:29 by mac               #+#    #+#             */
-/*   Updated: 2024/05/08 12:04:10 by mac              ###   ########.fr       */
+/*   Updated: 2024/05/08 19:30:14 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	content_position(t_ryusupov **stack)
 {
 	t_ryusupov	*tmp;
-	int		i;
+	int			i;
 
 	tmp = *stack;
 	i = 0;
@@ -27,35 +27,8 @@ static void	content_position(t_ryusupov **stack)
 	}
 }
 
-// static int get_target(t_ryusupov **r_stack, int b_idx,
-//                       int t_i, int position)
-// {
-//     t_ryusupov *temp_a;
-//     int found_target;
-
-// 	found_target = 0;
-//     temp_a = *r_stack;
-//     while (temp_a)
-//     {
-//         if (!found_target && temp_a->i > b_idx && temp_a->i < t_i)
-//         {
-//             t_i = temp_a->i;
-//             position = temp_a->r_pos;
-//             found_target = 1;
-//         }
-//         else if (temp_a->i < t_i && temp_a->i > b_idx)
-//         {
-//             t_i = temp_a->i;
-//             position = temp_a->r_pos;
-//         }
-
-// 		temp_a = temp_a->next;
-//     }
-//     return (position);
-// }
-
-static int	get_target(t_ryusupov **a, int b_idx,
-								int target_idx, int target_pos)
+static int	get_target(t_ryusupov **a, int b_idx, int target_idx,
+		int target_pos)
 {
 	t_ryusupov	*tmp_a;
 
@@ -84,11 +57,10 @@ static int	get_target(t_ryusupov **a, int b_idx,
 	return (target_pos);
 }
 
-
 void	position(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b)
 {
 	t_ryusupov	*temp_b;
-	int		position;
+	int			position;
 
 	temp_b = *r_stack_b;
 	content_position(r_stack_a);

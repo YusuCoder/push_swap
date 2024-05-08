@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   costs.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 11:26:07 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/08 12:26:51 by mac              ###   ########.fr       */
+/*   Updated: 2024/05/08 19:40:31 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,55 +15,8 @@
 int	num_abs(int nb)
 {
 	if (nb < 0)
-		return (nb * -1);
+		return (-nb);
 	return (nb);
-}
-
-// void	smallest_move(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b)
-// {
-// 	t_ryusupov	*temp;
-// 	int			cost_of_a;
-// 	int			cost_of_b;
-// 	int			most_cheap;
-
-// 	temp = *r_stack_b;
-// 	most_cheap = INT_MAX;
-// 	while (temp)
-// 	{
-// 		if (num_abs(temp->r_cost_a)
-// 			+ num_abs(temp->r_cost_b) < num_abs(most_cheap))
-// 		{
-// 			most_cheap = num_abs(temp->r_cost_b) + num_abs(temp->r_cost_a);
-// 			cost_of_a = temp->r_cost_a;
-// 			cost_of_b = temp->r_cost_b;
-// 		}
-// 		temp = temp->next;
-// 	}
-// 	move(r_stack_a, r_stack_b, cost_of_a, cost_of_b);
-// }
-
-void	costs(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b)
-{
-	t_ryusupov *stack_a;
-	t_ryusupov *stack_b;
-	int			size_a;
-	int			size_b;
-
-	stack_a = *r_stack_a;
-	stack_b = *r_stack_b;
-	size_a = ft_lstsize(stack_a);
-	size_b = ft_lstsize(stack_b);
-	while (stack_b)
-	{
-		stack_b->r_cost_b = stack_b->r_pos;
-		if (stack_b->r_pos > size_b / 2)
-			stack_b->r_cost_b = (size_b - stack_b->r_pos) * -1;
-		stack_b->r_cost_a = stack_b->r_target_pos;
-		if (stack_b->r_target_pos > size_a / 2)
-			stack_b->r_cost_a = (size_a - stack_b->r_target_pos) * -1;
-		stack_b = stack_b->next;
-	}
-
 }
 
 static int	calculate_move_cost(int cost_a, int cost_b)
@@ -100,24 +53,25 @@ void	make_cheapest_move(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b)
 	move(r_stack_a, r_stack_b, cheapest_a, cheapest_b);
 }
 
-// void	make_cheapest_move(t_ryusupov **stack_a, t_ryusupov **stack_b)
-// {
-// 	t_ryusupov	*tmp;
-// 	int		cheapest;
-// 	int		cost_a;
-// 	int		cost_b;
+void	costs(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b)
+{
+	t_ryusupov	*stack_a;
+	t_ryusupov	*stack_b;
+	int			size_a;
+	int			size_b;
 
-// 	tmp = *stack_b;
-// 	cheapest = INT_MAX;
-// 	while (tmp)
-// 	{
-// 		if (num_abs(tmp->cost_a) + num_abs(tmp->cost_b) < num_abs(cheapest))
-// 		{
-// 			cheapest = num_abs(tmp->cost_b) + num_abs(tmp->cost_a);
-// 			cost_a = tmp->cost_a;
-// 			cost_b = tmp->cost_b;
-// 		}
-// 		tmp = tmp->next;
-// 	}
-// 	do_move(stack_a, stack_b, cost_a, cost_b);
-// }
+	stack_a = *r_stack_a;
+	stack_b = *r_stack_b;
+	size_a = ft_lstsize(stack_a);
+	size_b = ft_lstsize(stack_b);
+	while (stack_b)
+	{
+		stack_b->r_cost_b = stack_b->r_pos;
+		if (stack_b->r_pos > size_b / 2)
+			stack_b->r_cost_b = (size_b - stack_b->r_pos) * -1;
+		stack_b->r_cost_a = stack_b->r_target_pos;
+		if (stack_b->r_target_pos > size_a / 2)
+			stack_b->r_cost_a = (size_a - stack_b->r_target_pos) * -1;
+		stack_b = stack_b->next;
+	}
+}

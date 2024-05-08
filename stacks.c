@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stacks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 11:44:33 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/08 11:41:18 by mac              ###   ########.fr       */
+/*   Updated: 2024/05/08 19:34:15 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /*Function buttom_stack adds new node to the buttom of the list*/
 
 /*Function stack_new creates a stack elements with the provided value,
-	and returns the newly created stack element*/
+// 	and returns the newly created stack element*/
 void	buttom_stack(t_ryusupov **r_stack_a, t_ryusupov *new)
 {
 	t_ryusupov	*current;
@@ -34,28 +34,6 @@ void	buttom_stack(t_ryusupov **r_stack_a, t_ryusupov *new)
 	}
 	current->next = new;
 }
-
-// t_ryusupov	*get_ryusupov_bottom(t_ryusupov *stack)
-// {
-// 	while (stack && stack->next != NULL)
-// 		stack = stack->next;
-// 	return (stack);
-// }
-
-// void	buttom_stack(t_ryusupov **r_stack_a, t_ryusupov *new)
-// {
-// 	t_ryusupov	*tail;
-
-// 	if (!new)
-// 		return ;
-// 	if (!*r_stack_a)
-// 	{
-// 		*r_stack_a = new;
-// 		return ;
-// 	}
-// 	tail = get_ryusupov_bottom(*r_stack_a);
-// 	tail->next = new;
-// }
 
 t_ryusupov	*stack_new(int str)
 {

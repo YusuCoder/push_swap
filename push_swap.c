@@ -3,37 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 17:43:39 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/08 11:33:25 by mac              ###   ########.fr       */
+/*   Updated: 2024/05/08 16:33:04 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ryusupov_h/ryusupov.h"
-
-// t_ryusupov	*stack_contents(int argc, char **argv)
-// {
-// 	t_ryusupov		*stack_a;
-// 	long int	nb;
-// 	int			i;
-
-// 	stack_a = NULL;
-// 	nb = 0;
-// 	i = 1;
-// 	while (i < argc)
-// 	{
-// 		nb = ft_atoi(argv[i]);
-// 		if (nb > INT_MAX || nb < INT_MIN)
-// 			exit (1);
-// 		if (i == 1)
-// 			stack_a = stack_new((int)nb);
-// 		else
-// 			buttom_stack(&stack_a, stack_new((int)nb));
-// 		i++;
-// 	}
-// 	return (stack_a);
-// }
 
 static void	*stack_contents(int argc, char **argv)
 {
