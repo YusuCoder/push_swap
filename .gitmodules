@@ -1,9 +1,6 @@
 [submodule "ryusupov_h/libftt"]
 	path = ryusupov_h/libftt
 	url = https://github.com/YusuCoder/libft.git
-[submodule "ryusupov_h/get_next_line"]
-	path = ryusupov_h/get_next_line
-	url = https://github.com/YusuCoder/get_next_line.git
 [submodule "ryusupov_h/printf"]
 	path = ryusupov_h/printf
 	url = https://github.com/YusuCoder/printf.git

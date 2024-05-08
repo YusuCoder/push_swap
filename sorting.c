@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 13:18:07 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/05 13:37:35 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/05/07 22:24:04 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ void	small_sorting(t_ryusupov **r_stack)
 		return ;
 	max = max_index(*r_stack);
 	if ((*r_stack)->i == max)
-		rule_ra_rb(r_stack, 'a');
+		rule_ra(r_stack);
 	else if ((*r_stack)->next->i == max)
-		rule_rra_rrb(r_stack, 'a');
+		rule_rra(r_stack);
 	if ((*r_stack)->i > (*r_stack)->next->i)
-		rule_sa_sb(r_stack, 'a');
+		rule_sa(r_stack);
 }
 
 // t_ryusupov *createNode(int data) {

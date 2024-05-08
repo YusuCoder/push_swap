@@ -8,7 +8,7 @@ NAME = push_swap
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = push_swap.c checking_inputs.c indexing.c rev_rotates.c rotates.c sorting.c stacks.c swaps.c
+SRC = push_swap.c checking_inputs.c indexing.c rev_rotates.c rotates.c sorting.c stacks.c swaps.c huge_sort.c pushes.c costs.c actions.c positions.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -28,7 +28,7 @@ define ANIMATE_WELCOME
         sleep 0.2; \
     done
     @printf "\033[0m\n\n\n"
-    @sleep 1
+    @sleep 0.5
     @for frame in $(FRAMES); do \
         printf "\x1b[35m%s\n\033[0m" $$frame; \
         sleep 0.1; \
@@ -38,10 +38,10 @@ endef
 
 define ANIMATE_PROCESSING
     @printf "\n\033[1;31mCleaning"
-    @sleep 1
+    @sleep 0.5
     @for i in {1..10}; do \
         printf "."; \
-        sleep 0.2; \
+        sleep 0.1; \
     done
     @printf "\033[0m\n\n"
 endef

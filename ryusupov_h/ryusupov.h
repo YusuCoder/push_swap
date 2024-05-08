@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ryusupov.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:21:53 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/05 21:03:07 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/05/07 22:27:26 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,6 @@
 # include <unistd.h>
 /*-----------------FT_PRINTF---------------------*/
 # include "./printf/ft_printf.h"
-/*-----------------GET_NEXT_LINE------------------*/
-// # include "get_next_line/get_next_line.h"
-# include "get_next_line/get_next_line_bonus.h"
 /*---------------LBFT FUNCTIONS------------------*/
 # include "libftt/libft.h"
 /*-----------Function declarations-------------*/
@@ -46,16 +43,27 @@ t_ryusupov	*stack_new(int str);
 void		small_sorting(t_ryusupov **r_stack);
 void		buttom_stack(t_ryusupov **r_stach_a, t_ryusupov *new);
 void		content_index(t_ryusupov *r_stack_a, int size);
-void		rule_sa_sb(t_ryusupov **r_stack, char option);
+// void		rule_sa_sb(t_ryusupov **r_stack, char option);
+void		rule_sa(t_ryusupov **r_stack);
+void		rule_sa(t_ryusupov **r_stack);
 void		rule_ss(t_ryusupov **r_stack, t_ryusupov **r_stack_b);
-void		rule_ra_rb(t_ryusupov **r_stack, char rule);
+// void		rule_ra_rb(t_ryusupov **r_stack, char rule);
+void		rule_ra(t_ryusupov **r_stack);
+void		rule_rb(t_ryusupov **r_stack);
 void		rule_rr(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b);
-void		rule_rra_rrb(t_ryusupov **r_stack, char rule);
+// void		rule_rra_rrb(t_ryusupov **r_stack, char rule);
+void		rule_rra(t_ryusupov **r_stack);
+void		rule_rrb(t_ryusupov **r_stack);
 void		rule_pb(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b);
 void		rule_pa(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b);
 void	rule_rrr(t_ryusupov **r_stack_a,
 				t_ryusupov **r_stack_b);
 void		huge_sorting(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b);
+void		position(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b);
+void		costs(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b);
+void		make_cheapest_move(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b);
+void		move(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b, int cost_a,
+		int cost_b);
 int			correct_input(char **str);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rev_rotates.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 16:03:31 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/04 22:13:41 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/05/07 22:18:19 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,26 @@ void	reverse_rotate(t_ryusupov **r_stack)
 	(*r_stack)->next = temp;
 	before_last->next = NULL;
 }
-void	rule_rra_rrb(t_ryusupov **r_stack, char rule)
+// void	rule_rra_rrb(t_ryusupov **r_stack, char rule)
+// {
+// 	if (rule == 'a' || rule == 'b')
+// 	{
+// 		reverse_rotate(r_stack);
+// 		ft_printf("rr%c\n", rule);
+// 	}
+// }
+
+void	rule_rra(t_ryusupov **r_stack)
 {
-	if (rule == 'a' || rule == 'b')
-	{
-		reverse_rotate(r_stack);
-		ft_printf("rr%c\n", rule);
-	}
+	reverse_rotate(r_stack);
+	ft_printf("rra\n");
 }
+void	rule_rrb(t_ryusupov **r_stack)
+{
+	reverse_rotate(r_stack);
+	ft_printf("rrb\n");
+}
+
 void	rule_rrr(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b)
 {
 	reverse_rotate(r_stack_a);
