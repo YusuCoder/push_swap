@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pushes.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 19:26:51 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/05 19:35:57 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/05/08 12:13:07 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,18 @@ void	pushing(t_ryusupov **to, t_ryusupov **from)
 	*from = *to;
 	*to = temp;
 }
+
+// static void	pushing(t_ryusupov **src, t_ryusupov **dest)
+// {
+// 	t_ryusupov	*tmp;
+
+// 	if (*src == NULL)
+// 		return ;
+// 	tmp = (*src)->next;
+// 	(*src)->next = *dest;
+// 	*dest = *src;
+// 	*src = tmp;
+// }
 
 void	rule_pa(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b)
 {

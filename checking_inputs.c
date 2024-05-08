@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checking_inputs.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 14:55:46 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/05 13:31:01 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/05/07 23:12:33 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	dublicate_check(char **str)
 		a = 1;
 		while (str[a])
 		{
-			if (ft_strcmp(str[i], str[a]) == 0)
+			if (a != i && ft_strcmp(str[i], str[a]) == 0)
 				return (1);
 			a++;
 		}
@@ -39,7 +39,7 @@ static int	str_is_zero(const char *str)
 	i = 0;
 	if (str[i] == '+' || str[i] == '-')
 		i++;
-	while (str[i] == '0')
+	while (str[i] && str[i] == '0')
 	{
 		i++;
 	}
@@ -79,7 +79,6 @@ int	correct_input(char **str)
 	{
 		if (!str_is_num(str[i]))
 		{
-			ft_printf("Error! String is not numeric!\n");
 			return (0);
 		}
 		zero = zero + str_is_zero(str[i]);
@@ -89,7 +88,6 @@ int	correct_input(char **str)
 		return (0);
 	if (dublicate_check(str))
 	{
-		ft_printf("Error! Dublicates provided!\n");
 		return (0);
 	}
 	return (1);

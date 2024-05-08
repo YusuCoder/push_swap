@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   indexing.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 11:57:50 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/04 21:22:17 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/05/08 11:34:15 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,36 @@ void	content_index(t_ryusupov *r_stack_a, int size)
 		a = r_stack_a;
 	}
 }
+
+// void	content_index(t_ryusupov *stack_a, int stack_size)
+// {
+// 	t_ryusupov	*ptr;
+// 	t_ryusupov	*highest;
+// 	int		value;
+
+// 	while (--stack_size > 0)
+// 	{
+// 		ptr = stack_a;
+// 		value = INT_MIN;
+// 		highest = NULL;
+// 		while (ptr)
+// 		{
+// 			if (ptr->r_content == INT_MIN && ptr->i == 0)
+// 				ptr->r_content = 1;
+// 			if (ptr->r_content > value && ptr->i == 0)
+// 			{
+// 				value = ptr->r_content;
+// 				highest = ptr;
+// 				ptr = stack_a;
+// 			}
+// 			else
+// 				ptr = ptr->next;
+// 		}
+// 		if (highest != NULL)
+// 			highest->i = stack_size;
+// 	}
+// }
+
 // int	main(void)
 // {
 // 	t_ryusupov	*node1;

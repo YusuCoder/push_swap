@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotates.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 13:35:18 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/05 20:30:35 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/05/07 22:58:07 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,60 @@
 			no rotation is needed). If the stack has more than one element,
 	it rotates the stack by moving the first element to the end.*/
 
-void	rotate_stack(t_ryusupov **r_stack)
-{
-	t_ryusupov	*temp;
-	t_ryusupov	*last_node;
+// void	rotate_stack(t_ryusupov **r_stack)
+// {
+// 	t_ryusupov	*temp;
+// 	t_ryusupov	*last_node;
 
-	if (*r_stack == NULL || (*r_stack)->next == NULL)
-		return ;
-	temp = *r_stack;
-	*r_stack = (*r_stack)->next;
-	last_node = *r_stack;
-	while (last_node->next != NULL)
-		last_node = last_node->next;
-	temp->next = NULL;
-	last_node->next = temp;
+// 	if (*r_stack == NULL || (*r_stack)->next == NULL)
+// 		return ;
+// 	temp = *r_stack;
+// 	*r_stack = (*r_stack)->next;
+// 	last_node = *r_stack;
+// 	while (last_node->next != NULL)
+// 		last_node = last_node->next;
+// 	temp->next = NULL;
+// 	last_node->next = temp;
+// }
+
+t_ryusupov	*get_stack_bottom(t_ryusupov *stack)
+{
+	while (stack && stack->next != NULL)
+		stack = stack->next;
+	return (stack);
 }
 
-void	rule_ra_rb(t_ryusupov **r_stack, char rule)
+static void	rotate_stack(t_ryusupov **r_stack)
 {
-	if (rule == 'a' || rule == 'b')
-	{
-		rotate_stack(r_stack);
-		ft_printf("r%c\n", rule);
-	}
+	t_ryusupov	*tmp;
+	t_ryusupov	*tail;
+
+	tmp = *r_stack;
+	*r_stack = (*r_stack)->next;
+	tail = get_stack_bottom(*r_stack);
+	tmp->next = NULL;
+	tail->next = tmp;
+}
+
+// void	rule_ra_rb(t_ryusupov **r_stack, char rule)
+// {
+// 	if (rule == 'a' || rule == 'b')
+// 	{
+// 		rotate_stack(r_stack);
+// 		ft_printf("r%c\n", rule);
+// 	}
+// }
+
+void	rule_ra(t_ryusupov **r_stack)
+{
+	rotate_stack(r_stack);
+	ft_printf("ra\n");
+}
+
+void	rule_rb(t_ryusupov **r_stack)
+{
+	rotate_stack(r_stack);
+	ft_printf("rb\n");
 }
 
 void	rule_rr(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b)
