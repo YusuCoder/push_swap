@@ -6,7 +6,7 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 12:01:11 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/08 11:02:21 by mac              ###   ########.fr       */
+/*   Updated: 2024/05/08 23:11:08 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,7 @@ void	swap_list(t_ryusupov *r_stack)
 // 		ft_printf("s%c\n", rule);
 // 	}
 // }
-
-
+ 
 void	rule_sa(t_ryusupov **r_stack)
 {
 	swap_list(*r_stack);

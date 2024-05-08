@@ -6,7 +6,7 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:21:53 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/07 22:27:26 by mac              ###   ########.fr       */
+/*   Updated: 2024/05/08 23:09:42 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+/*-----------------LEAK DEDECTOR-----------------*/
+// # include "../leak_detector/mem.h"
 /*-----------------FT_PRINTF---------------------*/
 # include "./printf/ft_printf.h"
 /*---------------LBFT FUNCTIONS------------------*/
