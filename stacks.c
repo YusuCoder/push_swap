@@ -6,7 +6,7 @@
 /*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 11:44:33 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/08 19:34:15 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/05/09 16:56:24 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ t_ryusupov	*stack_new(int str)
 {
 	t_ryusupov	*new;
 
-	new = malloc(sizeof * new);
+	new = malloc(sizeof(t_ryusupov));
 	if (!new)
 		return (NULL);
 	new->r_content = str;
