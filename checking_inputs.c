@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checking_inputs.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 14:55:46 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/07 23:12:33 by mac              ###   ########.fr       */
+/*   Updated: 2024/05/09 13:42:23 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,24 +48,27 @@ static int	str_is_zero(const char *str)
 	return (1);
 }
 
-static int	str_is_num(char *str)
+static int	str_is_num(const char *str)
 {
 	int	i;
+	int	has_digits;
 
-	i = 0;
 	if (!str)
 		return (0);
-	if (str[i] != '\0' && !ft_isdigit(str[i]))
-		return (0);
-	if (str[i] == '+' || (str[i] == '-' && str[i + 1] != '\0'))
+	i = 0;
+	while (str[i] != '\0' && ft_isspace(str[i]))
 		i++;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	has_digits = 0;
 	while (str[i] != '\0')
 	{
-		if (!ft_isdigit(str[i]))
+		if (str[i] < '0' || str[i] > '9')
 			return (0);
+		has_digits = 1;
 		i++;
 	}
-	return (1);
+	return (has_digits);
 }
 
 int	correct_input(char **str)
