@@ -6,7 +6,7 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:21:53 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/07 22:27:26 by mac              ###   ########.fr       */
+/*   Updated: 2024/05/08 23:42:24 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+/*-----------------LEAK DEDECTOR-----------------*/
+// # include "../leak_detector/mem.h"
 /*-----------------FT_PRINTF---------------------*/
 # include "./printf/ft_printf.h"
 /*---------------LBFT FUNCTIONS------------------*/
@@ -43,20 +45,16 @@ t_ryusupov	*stack_new(int str);
 void		small_sorting(t_ryusupov **r_stack);
 void		buttom_stack(t_ryusupov **r_stach_a, t_ryusupov *new);
 void		content_index(t_ryusupov *r_stack_a, int size);
-// void		rule_sa_sb(t_ryusupov **r_stack, char option);
-void		rule_sa(t_ryusupov **r_stack);
-void		rule_sa(t_ryusupov **r_stack);
+void		rule_sa_sb(t_ryusupov **r_stack, char option);
 void		rule_ss(t_ryusupov **r_stack, t_ryusupov **r_stack_b);
-// void		rule_ra_rb(t_ryusupov **r_stack, char rule);
-void		rule_ra(t_ryusupov **r_stack);
 void		rule_rb(t_ryusupov **r_stack);
+void		rule_ra(t_ryusupov **r_stack);
 void		rule_rr(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b);
-// void		rule_rra_rrb(t_ryusupov **r_stack, char rule);
 void		rule_rra(t_ryusupov **r_stack);
 void		rule_rrb(t_ryusupov **r_stack);
 void		rule_pb(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b);
 void		rule_pa(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b);
-void	rule_rrr(t_ryusupov **r_stack_a,
+void		rule_rrr(t_ryusupov **r_stack_a,
 				t_ryusupov **r_stack_b);
 void		huge_sorting(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b);
 void		position(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b);

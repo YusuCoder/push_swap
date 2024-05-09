@@ -6,7 +6,7 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 12:01:11 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/08 11:02:21 by mac              ###   ########.fr       */
+/*   Updated: 2024/05/08 23:32:09 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,26 +34,13 @@ void	swap_list(t_ryusupov *r_stack)
 	r_stack->next->i = temp;
 }
 
-// void	rule_sa_sb(t_ryusupov **r_stack, char rule)
-// {
-// 	if (rule == 'a' || rule == 'b')
-// 	{
-// 		swap_list(*r_stack);
-// 		ft_printf("s%c\n", rule);
-// 	}
-// }
-
-
-void	rule_sa(t_ryusupov **r_stack)
+void	rule_sa_sb(t_ryusupov **r_stack, char rule)
 {
-	swap_list(*r_stack);
-	ft_printf("sa\n");
-}
-
-void	rule_sb(t_ryusupov **r_stack)
-{
-	swap_list(*r_stack);
-	ft_printf("sb\n");
+	if (rule == 'a' || rule == 'b')
+	{
+		swap_list(*r_stack);
+		ft_printf("s%c\n", rule);
+	}
 }
 
 void	rule_ss(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b)

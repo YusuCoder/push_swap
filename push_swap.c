@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 17:43:39 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/08 16:33:04 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/05/08 23:22:20 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static void	push_swap(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b,
 		int stack_size)
 {
 	if (stack_size == 2 && !list_sorted(*r_stack_a))
-		rule_sa(r_stack_a);
+		rule_sa_sb(r_stack_a, 'a');
 	else if (stack_size == 3)
 		small_sorting(r_stack_a);
 	else if (stack_size > 3 && !list_sorted(*r_stack_a))
