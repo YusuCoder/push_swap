@@ -8,7 +8,7 @@ NAME = push_swap
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = push_swap.c checking_inputs.c indexing.c rev_rotates.c rotates.c sorting.c stacks.c swaps.c huge_sort.c pushes.c costs.c actions.c positions.c
+SRC = push_swap.c checking_inputs.c indexing.c rev_rotates.c rotates.c sorting.c stacks.c swaps.c huge_sort.c pushes.c costs.c actions.c positions.c utils.c
 
 OBJ = $(SRC:.c=.o)
 

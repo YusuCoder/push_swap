@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stacks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 11:44:33 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/09 16:56:24 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/05/09 23:37:16 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	buttom_stack(t_ryusupov **r_stack_a, t_ryusupov *new)
 	{
 		current = current->next;
 	}
-	current->next = new;
+		current->next = new;
 }
 
 t_ryusupov	*stack_new(int str)
