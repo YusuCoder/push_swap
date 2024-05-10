@@ -5,15 +5,16 @@ NC=\033[0m
 
 NAME = push_swap
 
+LIBFT_DIR = ./ryusupov_h/libftt/
+PRINTF_DIR = ./ryusupov_h/printf/
+SRC_DIR := initialization rules input_error_ckeck sorting
+
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = push_swap.c checking_inputs.c indexing.c rev_rotates.c rotates.c sorting.c stacks.c swaps.c huge_sort.c pushes.c costs.c actions.c positions.c utils.c
-
+SRC := $(SRC_INIT) $(SRC_RULES) $(SRC_INPUT_CHECK) $(SRC_SORTING)
 OBJ = $(SRC:.c=.o)
 
-LIBFT_DIR = ./ryusupov_h/libftt/
-PRINTF_DIR = ./ryusupov_h/printf/
 
 LIBFT = $(LIBFT_DIR)libft.a
 PRINTF = $(PRINTF_DIR)libftprintf.a
@@ -53,7 +54,7 @@ $(NAME): $(OBJ) $(LIBFT) $(PRINTF)
 	$(ANIMATE_WELCOME)
 
 $(LIBFT):
-	@make -C $(LIBFT_DIR)
+@make -C $(LIBFT_DIR)
 
 $(PRINTF):
 	@make -C $(PRINTF_DIR)
