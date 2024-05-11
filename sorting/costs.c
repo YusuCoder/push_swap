@@ -6,7 +6,7 @@
 /*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 11:26:07 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/10 19:11:59 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/05/11 20:02:19 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,9 @@ static void	find_cheapest_move(t_ryusupov *stack_b, int *cheapest_a,
 
 void	make_cheapest_move(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b)
 {
-	int cheapest_a, cheapest_b;
+	int	cheapest_a;
+	int	cheapest_b;
+
 	find_cheapest_move(*r_stack_b, &cheapest_a, &cheapest_b);
 	move(r_stack_a, r_stack_b, cheapest_a, cheapest_b);
 }

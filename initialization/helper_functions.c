@@ -6,7 +6,7 @@
 /*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 18:03:17 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/10 19:13:29 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/05/11 19:59:16 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	free_content(void *node)
 	temp = (t_ryusupov *)node;
 	free(temp);
 }
+
 size_t	count_words(char **words)
 {
 	size_t	count;

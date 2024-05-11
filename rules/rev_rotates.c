@@ -6,7 +6,7 @@
 /*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 16:03:31 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/10 19:10:08 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/05/11 20:00:04 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void	rule_rra(t_ryusupov **r_stack)
 	reverse_rotate(r_stack);
 	ft_printf("rra\n");
 }
+
 void	rule_rrb(t_ryusupov **r_stack)
 {
 	reverse_rotate(r_stack);

@@ -6,15 +6,15 @@
 /*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 12:01:11 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/10 19:08:36 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/05/11 20:00:33 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ryusupov_h/ryusupov.h"
 
 /*The function swap_list swaps the content of current node with next node*/
-/*The function rule_sa_sb is checks if the rule is sa(swap a) or sb(swap b) and makes swap
-	between nodes*/
+/*The function rule_sa_sb is checks if the rule is sa(swap a) or sb(swap b)
+	 and makes swap between nodes*/
 /*the rule_ss is (swap b and swap a at the same time)*/
 
 void	swap_list(t_ryusupov *r_stack)

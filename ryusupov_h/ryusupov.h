@@ -6,7 +6,7 @@
 /*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:21:53 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/10 19:04:36 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/05/11 20:07:23 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ void		push_swap(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b,
 void		huge_sorting(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b);
 void		position(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b);
 void		costs(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b);
-void	make_cheapest_move(t_ryusupov **r_stack_a,
-						t_ryusupov **r_stack_b);
+void		make_cheapest_move(t_ryusupov **r_stack_a,
+				t_ryusupov **r_stack_b);
 void		move(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b, int cost_a,
 				int cost_b);
 /*-----------------------The rules-----------------------*/
@@ -65,11 +65,12 @@ void		rule_rra(t_ryusupov **r_stack);
 void		rule_rrb(t_ryusupov **r_stack);
 void		rule_pb(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b);
 void		rule_pa(t_ryusupov **r_stack_a, t_ryusupov **r_stack_b);
-void	rule_rrr(t_ryusupov **r_stack_a,
+void		rule_rrr(t_ryusupov **r_stack_a,
 				t_ryusupov **r_stack_b);
 /*-----------------------Helper functions-----------------------*/
 int			correct_input(char **str);
 void		free_content(void *node);
 size_t		count_words(char **words);
 void		print_error_and_exit(const char *message, int exit_code);
+
 #endif

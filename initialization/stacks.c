@@ -6,7 +6,7 @@
 /*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 11:44:33 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/10 19:10:49 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/05/11 19:59:36 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	buttom_stack(t_ryusupov **r_stack_a, t_ryusupov *new)
 	{
 		current = current->next;
 	}
-		current->next = new;
+	current->next = new;
 }
 
 t_ryusupov	*stack_new(int str)
