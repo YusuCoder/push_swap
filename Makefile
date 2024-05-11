@@ -7,14 +7,23 @@ NAME = push_swap
 
 LIBFT_DIR = ./ryusupov_h/libftt/
 PRINTF_DIR = ./ryusupov_h/printf/
-SRC_DIR := initialization rules input_error_ckeck sorting
+
+SRC_PATH = .
+INIT_PATH = ./initialization
+ERROR_PATH = ./input_error_check
+PUSH_PATH = ./push_swap_visualizer
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRC := $(SRC_INIT) $(SRC_RULES) $(SRC_INPUT_CHECK) $(SRC_SORTING)
-OBJ = $(SRC:.c=.o)
-
+SRC     = main.c \
+        indexing.c positions.c push_swap.c stacks.c \
+        checking_inputs.c helper_functions.c \
+        rev_rotate.c rotates.c swaps.c \
+        actions.c costs.c huge_sort.c pushes.c sorting.c
+SRCS    = $(addprefix $(SRC_PATH), $(SRC))
+OBJ     = $(SRC:.c=.o)
+OBJS    = $(addprefix $(OBJ_PATH), $(OBJ))
 
 LIBFT = $(LIBFT_DIR)libft.a
 PRINTF = $(PRINTF_DIR)libftprintf.a
@@ -47,23 +56,19 @@ define ANIMATE_PROCESSING
     @printf "\033[0m\n\n"
 endef
 
-all: $(NAME)
+all: $(OBJ_PATH) $(NAME) 
 
-$(NAME): $(OBJ) $(LIBFT) $(PRINTF)
-	@$(CC) $(CFLAGS) $(INCS) -o $(NAME) $(OBJ) $(LIBFT) $(PRINTF)
-	$(ANIMATE_WELCOME)
+$(OBJ_PATH)%.o: $(SRC_PATH)%.c
+	$(CC) $(CFLAGS) -c $< -o $@ $(INCS)
 
-$(LIBFT):
-@make -C $(LIBFT_DIR)
+$(OBJ_PATH):
+	mkdir $(OBJ_PATH)
 
-$(PRINTF):
-	@make -C $(PRINTF_DIR)
-
-%.o: %.c
-	@$(CC) $(CFLAGS) $(INCS) -c $< -o $@
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 clean:
-	@$(RM) $(OBJ)
+	@$(RM) $(OBJ_PATH)
 	@make clean -C $(LIBFT_DIR)
 	@make clean -C $(PRINTF_DIR)
 	$(ANIMATE_PROCESSING)
