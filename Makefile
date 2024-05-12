@@ -4,7 +4,9 @@ YELLOW=\033[0;33m
 NC=\033[0m
 
 NAME = push_swap
-
+#************************************************#
+#                 PATHS TO FILES                 #
+#************************************************#
 INIT_PATH = ./initialization
 ERROR_PATH = ./input_error_check
 RULE_PATH = ./rules
@@ -13,11 +15,15 @@ OBJ_PATH = ./obj
 
 LIBFT_PATH = ./ryusupov_h/libftt
 LIBFTPRINTF_PATH = ./ryusupov_h/printf
-
+#************************************************#
+#                    COMMANDS                    #
+#************************************************#
 CC = gcc
 RM = rm -rf
 CFLAGS = -Wall -Wextra -g
-
+#************************************************#
+#                  SOURCE FILES                  #
+#************************************************#
 INIT_SRC = $(INIT_PATH)/indexing.c \
            $(INIT_PATH)/positions.c \
            $(INIT_PATH)/push_swap.c \
@@ -36,15 +42,21 @@ SORT_SRC = $(SORT_PATH)/actions.c \
            $(SORT_PATH)/sorting.c
 
 MAIN_SRC = main.c
-
+#************************************************#
+#                  OBJECT FILES                  #
+#************************************************#
 INIT_OBJ = $(patsubst %.c, $(OBJ_PATH)/%.o, $(notdir $(INIT_SRC)))
 RULE_OBJ = $(patsubst %.c, $(OBJ_PATH)/%.o, $(notdir $(RULE_SRC)))
 SORT_OBJ = $(patsubst %.c, $(OBJ_PATH)/%.o, $(notdir $(SORT_SRC)))
 MAIN_OBJ = $(OBJ_PATH)/main.o
-
+#************************************************#
+#                  SUB LIBRARIES                 #
+#************************************************#
 LIBFT = $(LIBFT_PATH)/libft.a
 LIBFTPRINTF = $(LIBFTPRINTF_PATH)/libftprintf.a
-
+#************************************************#
+#                   ANIMATIONS                   #
+#************************************************#
  define ANIMATE_WELCOME
      @printf "\n\033[1;32mProcessing"
      @sleep 0.1
@@ -70,7 +82,9 @@ LIBFTPRINTF = $(LIBFTPRINTF_PATH)/libftprintf.a
      done
      @printf "\033[0m\n\n"
  endef
-
+#************************************************#
+#                  COMPILATIONS                  #
+#************************************************#
 all: $(NAME)
 
 $(NAME): $(MAIN_OBJ) $(INIT_OBJ) $(RULE_OBJ) $(SORT_OBJ) $(LIBFT) $(LIBFTPRINTF)
@@ -115,7 +129,9 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
-
+#************************************************#
+#               ANIMATIONS FRAMES                #
+#************************************************#
 FRAMES := 	"ss██╗sssssssssss██████╗s██╗sss██╗███████╗██╗ss██╗ssssssss███████╗██╗ssss██╗s█████╗s██████╗ssssssssssss██╗ss"\
 			"s██╔╝sssssssssss██╔══██╗██║sss██║██╔════╝██║ss██║ssssssss██╔════╝██║ssss██║██╔══██╗██╔══██╗sssssssssss╚██╗s"\
 			"██╔╝█████╗█████╗██████╔╝██║sss██║███████╗███████║ssssssss███████╗██║s█╗s██║███████║██████╔╝█████╗█████╗╚██╗"\
