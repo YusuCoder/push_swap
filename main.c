@@ -6,7 +6,7 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 18:01:16 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/17 21:23:35 by mac              ###   ########.fr       */
+/*   Updated: 2024/05/17 21:39:10 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,7 @@ int	main(int argc, char **argv)
 		print_error_and_exit("Error!", EXIT_FAILURE);
 	}
 	r_stack_a = stack_contents(argc, argv);
-	r_size = ft_lstsize_new(r_stack_a);
-    // ft_printf("%d\n", r_stack_a);
+	r_size = ft_lstsize(r_stack_a);
 	content_index(r_stack_a, r_size + 1);
 	push_swap(&r_stack_a, &r_stack_b, r_size);
 	ft_lstclear(&r_stack_a, &free_content);

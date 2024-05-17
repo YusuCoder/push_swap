@@ -6,7 +6,7 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 18:03:17 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/17 21:10:52 by mac              ###   ########.fr       */
+/*   Updated: 2024/05/17 21:39:17 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,33 +32,6 @@ void free_array(char **array)
     }
     free(array);
 }
-int ft_lstsize_new(t_ryusupov *lst)
-{
-    int i;
-    t_ryusupov *temp;
-
-    i = 0;
-    temp = lst;
-    while (temp)
-    {
-        temp = temp->next;
-        i++;
-    }
-    return (i);
-}
-// size_t	count_words(char **words)
-// {
-// 	size_t	count;
-
-// 	count = 0;
-// 	while (*words)
-// 	{
-// 		if (**words)
-// 			count++;
-// 		words++;
-// 	}
-// 	return (count);
-// }
 
 size_t count_words(char **words)
 {
