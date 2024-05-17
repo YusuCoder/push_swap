@@ -20,7 +20,7 @@ LIBFTPRINTF_PATH = ./ryusupov_h/printf
 #************************************************#
 CC = gcc
 RM = rm -rf
-CFLAGS = -Wall -Wextra -g
+CFLAGS = -Wall -Wextra -Werror -g
 #************************************************#
 #                  SOURCE FILES                  #
 #************************************************#
