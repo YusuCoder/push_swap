@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ryusupov.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:21:53 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/17 21:10:22 by mac              ###   ########.fr       */
+/*   Updated: 2024/05/18 13:48:55 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,8 @@ void		rule_rrr(t_ryusupov **r_stack_a,
 int			correct_input(char **str);
 void		free_content(void *node);
 size_t		count_words(char **words);
-void 		free_array(char **array);
-int 		ft_lstsize_new(t_ryusupov *lst);
+void		free_array(char **array);
+int			ft_lstsize_new(t_ryusupov *lst);
 void		print_error_and_exit(const char *message, int exit_code);
 
 #endif

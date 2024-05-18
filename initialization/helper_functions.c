@@ -6,7 +6,7 @@
 /*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 18:03:17 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/18 12:47:07 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/05/18 13:46:52 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,25 +20,29 @@ void	free_content(void *node)
 	free(temp);
 }
 
-void free_array(char **array)
+void	free_array(char **array)
 {
-    size_t i = 0;
-    if (!array)
-        return;
-    while (array[i] != NULL)
-    {
-        free(array[i]);
-        i++;
-    }
-    free(array);
+	size_t	i;
+
+	i = 0;
+	if (!array)
+		return ;
+	while (array[i] != NULL)
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
 }
 
-size_t count_words(char **words)
+size_t	count_words(char **words)
 {
-    size_t count = 1;
-    while (words[count])
-        count++;
-    return count;
+	size_t	count;
+
+	count = 1;
+	while (words[count])
+		count++;
+	return (count);
 }
 
 void	print_error_and_exit(const char *message, int exit_code)

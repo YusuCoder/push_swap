@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   indexing.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 11:57:50 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/17 15:48:17 by mac              ###   ########.fr       */
+/*   Updated: 2024/05/18 13:47:24 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ryusupov_h/ryusupov.h"
-
 
 void	content_index(t_ryusupov *r_stack_a, int size)
 {
