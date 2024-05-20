@@ -1,51 +1,63 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checking_inputs.c                                  :+:      :+:    :+:   */
+/*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 14:55:46 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/10 19:13:23 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/05/20 15:11:51 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ryusupov_h/ryusupov.h"
 
-static int	dublicate_check(char **str)
+int	check_against_normalized(char *normalized_i, char **str, int i)
 {
-	int	i;
-	int	a;
+	char	*normalized_a;
+	int		a;
 
-	i = 1;
-	while (str[i])
+	a = 1;
+	while (str[a])
 	{
-		a = 1;
-		while (str[a])
+		if (a != i)
 		{
-			if (a != i && ft_strcmp(str[i], str[a]) == 0)
+			normalized_a = normalize_number(str[a]);
+			if (!normalized_a)
+			{
+				return (-1);
+			}
+			if (ft_strcmp(normalized_i, normalized_a) == 0)
+			{
+				free(normalized_a);
 				return (1);
-			a++;
+			}
+			free(normalized_a);
 		}
-		i++;
+		a++;
 	}
 	return (0);
 }
 
-static int	str_is_zero(const char *str)
+static int	dublicate_check(char **str)
 {
-	int	i;
+	char	*normalized_i;
+	int		i;
+	int		result;
 
-	i = 0;
-	if (str[i] == '+' || str[i] == '-')
-		i++;
-	while (str[i] && str[i] == '0')
+	i = 1;
+	while (str[i])
 	{
+		normalized_i = normalize_number(str[i]);
+		if (!normalized_i)
+			return (-1);
+		result = check_against_normalized(normalized_i, str, i);
+		free(normalized_i);
+		if (result != 0)
+			return (result);
 		i++;
 	}
-	if (str[i] != '\0')
-		return (0);
-	return (1);
+	return (0);
 }
 
 static int	str_is_num(const char *str)
@@ -74,9 +86,7 @@ static int	str_is_num(const char *str)
 int	correct_input(char **str)
 {
 	int	i;
-	int	zero;
 
-	zero = 0;
 	i = 1;
 	while (str[i])
 	{
@@ -84,11 +94,8 @@ int	correct_input(char **str)
 		{
 			return (0);
 		}
-		zero = zero + str_is_zero(str[i]);
 		i++;
 	}
-	if (zero > 1)
-		return (0);
 	if (dublicate_check(str))
 	{
 		return (0);

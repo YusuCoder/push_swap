@@ -6,7 +6,7 @@
 /*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 18:03:17 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/18 13:46:52 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/05/20 14:55:16 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,11 @@ void	free_content(void *node)
 	free(temp);
 }
 
-void	free_array(char **array)
+char *normalize_number(const char *str)
 {
-	size_t	i;
-
-	i = 0;
-	if (!array)
-		return ;
-	while (array[i] != NULL)
-	{
-		free(array[i]);
-		i++;
-	}
-	free(array);
+    while (*str == '0' && *(str + 1) != '\0')
+        str++;
+    return ft_strdup(str);
 }
 
 size_t	count_words(char **words)

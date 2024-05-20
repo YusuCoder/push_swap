@@ -6,7 +6,7 @@
 /*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 17:43:39 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/20 14:01:04 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/05/20 15:33:33 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	*stack_contents(int argc, char **argv)
 		num = ft_atol(argv[i]);
 		if (num > INT_MAX || num < INT_MIN)
 		{
-			free(r_stack_a);
+			ft_lstclear(&r_stack_a, &free_content);
 			ft_printf("Error!\n");
 			exit(EXIT_FAILURE);
 		}
