@@ -4,3 +4,6 @@
 [submodule "ryusupov_h/printf"]
 	path = ryusupov_h/printf
 	url = https://github.com/YusuCoder/printf.git
+[submodule "push_swap_visualizer"]
+	path = push_swap_visualizer
+	url = https://github.com/o-reo/push_swap_visualizer.git
